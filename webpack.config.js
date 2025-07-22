@@ -26,6 +26,14 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.less$/,
+                use: [
+                    "style-loader", // 把css变成style标签插入到html中
+                    "css-loader", // 解析url和@import语法
+                    "less-loader" // 将less=>css
+                ],
+            },
         ],
     },
     plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
